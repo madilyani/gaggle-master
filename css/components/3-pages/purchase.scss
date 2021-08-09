@@ -1,0 +1,353 @@
+.purchase {
+  display: flex;
+  position: relative;
+  padding-top: 16px;
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background: $border;
+  }
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    @include transformX;
+    width: 1px;
+    height: 100%;
+    content: "";
+    background: $border;
+  }
+  &__side {
+    width: calc(50% - 40px);
+    padding-right: 40px;
+    &:last-child {
+      padding-left: 40px;
+      width: calc(50% - 40px);
+      padding-right: 0;
+    }
+    &-subtitle {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      color: $white-black;
+      margin: 7px 0 14px 0;
+    }
+    &-text {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 19px;
+      color: $grey;
+      margin-bottom: 45px;
+    }
+    &-congrut {
+      margin: 20px 0 34px 0;
+      padding: 10px 0;
+      background: rgba($color: #14ce96, $alpha: 0.06);
+      border-radius: 4px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      color: #14ce96;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        margin-right: 8px;
+        width: 24px;
+        height: 21px;
+        fill: #14ce96;
+      }
+    }
+    &-discount {
+      margin: 20px 0 34px 0;
+      padding: 10px 0;
+      background: rgba(255, 178, 106, 0.12);
+      border-radius: 4px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      color: #ffb26a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        margin-right: 8px;
+        width: 24px;
+        height: 21px;
+        fill: #ffb26a;
+      }
+    }
+    &-discountOther {
+      margin: 20px 0 34px 0;
+      padding: 10px 0;
+      background: rgba($color: $blue, $alpha: 0.15);
+      border-radius: 4px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      color: $blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        margin-right: 8px;
+        width: 24px;
+        height: 21px;
+        fill: $blue;
+      }
+    }
+    &-attention {
+      margin: 16px 0 34px 0;
+      padding: 19px 18px;
+      display: flex;
+      background: #211f30;
+      border-radius: 8px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      color: #8a879b;
+      svg {
+        margin-right: 10px;
+        width: 19px;
+        height: 17px;
+        margin-top: 3px;
+        fill: $grey;
+      }
+      span {
+        display: block;
+        width: calc(100% - 29px);
+      }
+    }
+    &-add {
+      &-header {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color: $white-black;
+        margin-bottom: 14px;
+      }
+      &-slider {
+        margin: 0 -5px;
+        &-item {
+          &-column {
+            margin: 10px 5px ;
+          }
+        }
+      }
+      &-body {
+        &-row {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        &-column {
+          position: relative;
+          margin: 6px 5px;
+          width: calc(50% - 10px);
+          /* cubic-bezier(0.6, -0.28, 0.735, 0.045) */
+          &.removed {
+            animation: 0.3s ease-in-out 0.1s remove;
+          }
+          &.hide {
+            display: none;
+          }
+          &.draggable {
+            transform: scale(1.03, 1.03);
+          }
+          @keyframes remove {
+            from {
+              transform: scale(1, 1);
+            }
+
+            30% {
+              transform: scale(1.1, 1.1);
+            }
+
+            99% {
+              transform: scale(0, 0);
+              height: 0;
+            }
+
+            to {
+              height: 0;
+              opacity: 0;
+            }
+          }
+        }
+      }
+
+      &-footer {
+        margin-top: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        &-btn {
+          width: 46px;
+          height: 38px;
+          border: 1px solid #403c4e;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          background: none;
+        }
+        &-input {
+          width: 46px;
+          height: 38px;
+          input {
+            width: 100%;
+            background: none;
+            text-align: center;
+            height: 100%;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 0.2px;
+            color: $grey;
+            font-family: "Nunito", sans-serif;
+          }
+        }
+      }
+    }
+    &-details {
+      &-fee {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color: $grey;
+        margin-bottom: 15px;
+        background: $main-bg;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        span {
+          color: rgba($color: $white-black, $alpha: 0.8);
+        }
+      }
+      &-title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color: $white-black;
+        margin-bottom: 12px;
+      }
+      &-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color: $grey;
+        margin-bottom: 15px;
+        span {
+          color: rgba($color: $white-black, $alpha: 0.8);
+        }
+      }
+      &-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color: $grey;
+        margin-bottom: 15px;
+        padding-top: 20px;
+        border-top: 1px solid $border;
+
+        span {
+          color: rgba($color: $white-black, $alpha: 0.8);
+          font-size: 20px;
+        }
+      }
+    }
+    &-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        margin-top: 40px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+        max-width: 290px;
+        border-radius: 100px;
+        background: $blue;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 1;
+        color: $white-black;
+        @include transition;
+        svg {
+          margin-right: 10px;
+        }
+        &:hover {
+          box-shadow: 0px 7px 21px -1px rgba($color: $blue, $alpha: 0.4);
+        }
+        &.margin-top {
+          margin-top: 100px;
+        }
+      }
+    }
+    &-member {
+      padding: 16px;
+      border-radius: 10px;
+      background: $main-bg;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &-text {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color: $white-black;
+        span {
+          display: block;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 20px;
+          letter-spacing: 0.2px;
+          color: $grey;
+          margin-top: 8px;
+          br {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

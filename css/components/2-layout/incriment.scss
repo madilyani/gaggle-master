@@ -1,0 +1,46 @@
+.incriment {
+  display: flex;
+  padding: 5px 10px;
+  background: none;
+  border: 1px solid $border;
+  box-sizing: border-box;
+  border-radius: 5px;
+  button {
+    background: none;
+    width: 29px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    @include transition;
+    svg {
+      fill: $grey;
+      @include transition;
+    }
+    &:focus {
+      background: $blue;
+      svg {
+        fill: #fff;
+      }
+    }
+    &:hover {
+      background: $blue;
+      svg {
+        fill: #fff;
+      }
+    }
+  }
+  input {
+    text-align: center;
+    width: 70px;
+    background: none;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: $white-black;
+  }
+}

@@ -1,0 +1,38 @@
+.search {
+  width: 280px;
+  position: relative;
+  input {
+    padding: 10px 15px 10px 40px;
+    width: calc(100% - 55px);
+    background: $main-bg;
+    border: 1px solid $border;
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: $grey;
+    &::placeholder {
+      color: $grey;
+    }
+    &::-webkit-input-placeholder {
+      color: $grey;
+    }
+    &:-moz-placeholder {
+      color: $grey;
+    }
+    &:-ms-input-placeholder {
+      color: $grey;
+    }
+  }
+  button {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    @include transformY;
+    background: none;
+    svg {
+      fill: $grey;
+    }
+  }
+}

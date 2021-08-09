@@ -1,0 +1,136 @@
+.games {
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    &-btn {
+      margin-right: 25px;
+      border: 1px solid $border;
+      border-radius: 4px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      color: $grey;
+      display: flex;
+      align-items: center;
+      padding: 10px 14px;
+      background: none;
+      cursor: pointer;
+      @include transition;
+      svg {
+        fill: $grey;
+        margin-right: 12px;
+        @include transition;
+      }
+      &:hover {
+        border: 1px solid $blue;
+        color: $white-black;
+        svg {
+          fill: $blue;
+        }
+      }
+      &.active {
+        border: 1px solid $blue;
+        color: $white-black;
+        svg {
+          fill: $blue;
+        }
+      }
+    }
+  }
+  &__category {
+    display: none;
+    position: relative;
+    animation: tab 0.5s linear;
+    &.active {
+      display: block;
+    }
+    &-grid {
+      display: flex;
+      margin: 0 -14px;
+    }
+    &-main {
+      width: 45%;
+      margin: 0;
+      &-column {
+        margin: 0 14px 34px 14px;
+      }
+    }
+    &-more {
+      width: 55%;
+      margin: 0;
+      &-row {
+        display: flex;
+        flex-wrap: wrap;
+        &-column {
+          width: calc(50% - 28px);
+          margin: 0 14px 20px 14px;
+        }
+      }
+      .card {
+        &__image {
+          height: 195px;
+        }
+        &__body {
+          padding: 15px 12px;
+          &-row {
+            h5 {
+              font-size: 18px;
+              line-height: 24px;
+              width: calc(100% - 100px);
+              max-width: 230px;
+            }
+            &-category {
+              padding: 0 10px;
+              height: 30px;
+              font-size: 14px;
+              line-height: 18px;
+              margin-right: -12px;
+              svg {
+                width: 14px;
+                height: 14px;
+                margin-right: 5px;
+              }
+            }
+          }
+          p {
+            font-size: 14px;
+            line-height: 18px;
+          }
+          &-footer {
+            &-row {
+              &-info {
+                border: none;
+                padding: 0;
+                &-icon {
+                  width: 26px;
+                  height: 25px;
+                  margin-right: 8px;
+                  svg {
+                    width: 14px;
+                    height: 14px;
+                  }
+                }
+                span {
+                  font-size: 14px;
+                  line-height: 18px;
+                }
+              }
+            }
+            &-btn {
+              padding: 10px 12px;
+              font-size: 16px;
+              line-height: 20px;
+              svg {
+                width: 10px;
+                height: 13px;
+                margin-right: 7px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

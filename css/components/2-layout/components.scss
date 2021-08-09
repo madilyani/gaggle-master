@@ -1,0 +1,25 @@
+.section {
+  width: calc(100% - 142px);
+  margin-left: 82px;
+  padding: 0 30px;
+}
+@keyframes tab {
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes tab {
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}

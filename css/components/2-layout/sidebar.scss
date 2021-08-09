@@ -1,0 +1,28 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $main-bg;
+  width: 82px;
+  height: 100%;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    &-logo {
+      padding: 20px 0 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      img {
+        width: 100%;
+      }
+    }
+    &-mobile {
+      display: none;
+    }
+  }
+}

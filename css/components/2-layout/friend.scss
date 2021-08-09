@@ -1,0 +1,150 @@
+.friend {
+  padding: 14px 9px;
+  display: flex;
+  background: $main-bg;
+  border-radius: 8px;
+  &__avatar {
+    width: 53px;
+    height: 100%;
+    border-radius: 4px;
+    margin-right: 10px;
+    overflow: hidden;
+    img {
+      @include fullImage;
+    }
+  }
+  &__body {
+    width: calc(100% - 63px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-info {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      color: $white-black;
+      margin-bottom: 4px;
+      a {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color: $grey;
+        display: block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 130px;
+      }
+    }
+  }
+  &__btn {
+    width: 64px;
+    height: 24px;
+    position: relative;
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 2;
+      &:hover ~ label {
+        .friend__btn-add {
+          box-shadow: 0px 7px 21px -1px rgba($color: $blue, $alpha: 0.4);
+        }
+      }
+    }
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      .friend__btn-add {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: $blue;
+        border-radius: 100px;
+        @include transition;
+        animation: label 0.3s ease-in-out;
+        svg {
+          margin-right: 8px;
+          fill: $white-black;
+        }
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 16px;
+        color: $white-black;
+      }
+      .friend__btn-added {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        animation: label 0.3s ease-in-out;
+        svg {
+          margin-right: 8px;
+          fill: $blue;
+        }
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 16px;
+        color: $blue;
+      }
+    }
+    input:checked ~ label {
+      .friend__btn-add {
+        display: none;
+      }
+      .friend__btn-added {
+        display: flex;
+      }
+    }
+  }
+  &__delete {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    @include transformY;
+    right: 10px;
+    svg {
+      fill: $grey;
+      @include transition;
+      pointer-events: none;
+    }
+    &:hover svg {
+      fill: $blue;
+    }
+  }
+}
+@keyframes label {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes label {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
