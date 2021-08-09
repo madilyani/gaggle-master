@@ -41,18 +41,17 @@ function onTabClick(tabBtns, tabItems, item) {
   });
 }
 const $$card = document.querySelector('.cardRe')
-const $$remove = document.querySelector('.remove')
-$($$remove).each((e) => {
-  onRemove($$remove, $$card, e);
+const removeBtns = document.querySelectorAll('.remove');
+removeBtns.forEach((btn) => {
+  onRemove(btn);
 });
-function onRemove() {
-  $$remove.addEventListener("click", function (e) {
-    $$card.classList.add('removed')
-  });
-  document.querySelector('.remove').addEventListener('click', (e) => {
-    $$card.addEventListener('animationend', () => {
-      $$card.classList.add('hide')
+function onRemove(btn ) {
+  btn.addEventListener("click", function (e) {
+    e.target.parentNode.classList.add('removed')
+    e.target.parentNode.addEventListener('animationend', (el) => {
+      el.target.classList.add('hide')
     })
-  })
+  });
+  
 }
   
