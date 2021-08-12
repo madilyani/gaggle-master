@@ -294,4 +294,79 @@
       }
     }
   }
+  &__modal {
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+    background: $main-bg;
+    position: relative;
+    border: 3px solid transparent;
+    @include transition;
+    &-image {
+      height: 190px;
+      width: 100%;
+      img {
+        @include fullImage;
+      }
+    }
+    &-body {
+      padding: 16px 8px 16px 8px;
+      &-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        &-text {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 24px;
+          letter-spacing: 0.2px;
+          color: #ffffff;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        &-row {
+          display: flex;
+          align-items: center;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 19px;
+          color: $grey;
+          &-icon {
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $border;
+            box-sizing: border-box;
+            border-radius: 4px;
+            margin-right: 8px;
+            svg {
+              fill: $yellow;
+              width: 14px;
+              height: 14px;
+            }
+          }
+        }
+      }
+      &-para {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 19px;
+        color: $grey;
+        height: 38px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    &:hover {
+      border: 3px solid $blue;
+      box-shadow: 0px 7px 21px -1px rgba($color: $blue, $alpha: 0.4);
+    }
+  }
 }

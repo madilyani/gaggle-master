@@ -21,10 +21,8 @@
       &-add {
         &-body {
           width: 100%;
-          overflow-x: auto;
           &-row {
             margin: 0 -5px;
-            flex-wrap: nowrap;
           }
           &::-webkit-scrollbar {
             display: none;
@@ -32,9 +30,6 @@
           & {
             -ms-overflow-style: none;
             scrollbar-width: none;
-          }
-          &-column {
-            min-width: 275px;
           }
         }
       }
@@ -78,6 +73,10 @@
         }
       }
     }
+  }
+  .purchase__side-add-body-column {
+    width: 100%;
+    margin: 6px 0;
   }
   .card {
     width: calc(50% - 28px);
@@ -565,6 +564,10 @@
       margin-bottom: 30px;
     }
   }
+  .purchase__side-add-body-column {
+    width: calc(50% - 10px);
+    margin: 6px 5px;
+  }
   // purchase page end
 }
 @include lg-xlg {
@@ -883,6 +886,10 @@
         }
       }
     }
+  }
+  .purchase__side-add-body-column {
+    width: 100%;
+    margin: 6px 0;
   }
   // purchase page end
 }

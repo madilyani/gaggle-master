@@ -6,6 +6,14 @@
   transition: background 0.2s ease-in-out 0s;
   -moz-transition: background 0.2s ease-in-out 0s;
 }
+@mixin transition-fill {
+  transition: fill 0.2s ease-in-out 0s;
+  -moz-transition: fill 0.2s ease-in-out 0s;
+}
+@mixin transition-shadow {
+  transition: box-shadow 0.2s ease-in-out 0s;
+  -moz-transition: box-shadow 0.2s ease-in-out 0s;
+}
 @mixin transition-border {
   transition: border 0.2s ease-in-out 0s;
   -moz-transition: border 0.2s ease-in-out 0s;

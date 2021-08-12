@@ -1,0 +1,102 @@
+.select__outer {
+  margin-bottom: 25px;
+  label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 27px;
+    color: $grey;
+    margin-bottom: 14px;
+    display: block;
+  }
+}
+.custom-select select {
+  display: none;
+}
+.custom-select {
+  position: relative;
+}
+.select-selected {
+  background-color: $main-bg;
+  border-radius: 4px;
+  &.select-arrow-active {
+    border-radius: 10px 10px 0 0;
+  }
+}
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  right: 23px;
+  width: 9px;
+  height: 9px;
+  z-index: 4;
+  border-bottom: 2px solid $blue;
+  border-right: 2px solid $blue;
+  @include transition;
+}
+.select-selected.select-arrow-active:after {
+  transform: translateY(-50%) rotate(225deg);
+}
+.select-selected.select-arrow-active {
+  border-bottom: none;
+  border: 4px 4px 0 0;
+}
+.select-selected {
+  border: 1px solid $border;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  color: $white-black;
+  cursor: pointer;
+  padding: 17px 24px;
+  border-radius: 10px;
+}
+.select-items div {
+  border-top: 1px solid $border;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  color: $white-black;
+  cursor: pointer;
+  padding: 17px 24px;
+  cursor: pointer;
+  @include transition;
+}
+.select-items {
+  position: absolute;
+  background-color: $main-bg;
+  border: 1px solid $border;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  cursor: pointer;
+  animation-name: select;
+  animation-duration: 0.3s;
+}
+.select-hide {
+  display: none;
+}
+.select-items div:hover,
+.same-as-selected {
+  background-color: $primary-bg;
+}
+.select-items::-webkit-scrollbar {
+  width: 10px;
+}
+.select-items::-webkit-scrollbar-track {
+  background: #ededed;
+  border-radius: 10px;
+}
+.select-items::-webkit-scrollbar-thumb {
+  background: #aeaeae;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}

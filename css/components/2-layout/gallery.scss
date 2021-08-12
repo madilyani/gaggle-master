@@ -1,0 +1,25 @@
+.gallery {
+  margin: 0 -9px;
+  &__column {
+    margin: 18px 9px;
+  }
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    button {
+      border: 1px solid $border;
+      box-sizing: border-box;
+      border-radius: 4px;
+      width: 46px;
+      height: 38px;
+      cursor: pointer;
+      background: none;
+      svg {
+        width: 10px;
+        height: 17px;
+        fill: $grey;
+      }
+    }
+  }
+}

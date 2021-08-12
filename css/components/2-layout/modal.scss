@@ -1,0 +1,83 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: 0.7);
+  z-index: 444;
+  display: none;
+  animation: modal 0.2s linear;
+  overflow-y: auto;
+  &.active {
+    display: block;
+  }
+  &__close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    cursor: pointer;
+    svg {
+      width: 13px;
+      height: 13px;
+      pointer-events: none;
+      fill: #a4a6b3;
+    }
+  }
+  &__inner {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: calc(100% - 50px);
+    max-width: 760px;
+    background: $primary-bg;
+    @include transformX;
+    border-radius: 12px;
+    &-header {
+      padding: 17px 0;
+      position: relative;
+      background: $main-bg;
+      border-radius: 12px 12px 0 0;
+      &-title {
+        text-align: center;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 30px;
+        line-height: 41px;
+        letter-spacing: 0.3px;
+        color: $white-black;
+      }
+      &-para {
+        text-align: center;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        color: $grey;
+      }
+    }
+    &-body {
+      padding: 20px 40px;
+    }
+  }
+}
+@keyframes modal {
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes modal {
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}

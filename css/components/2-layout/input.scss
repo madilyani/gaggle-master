@@ -1,0 +1,60 @@
+.input {
+  &__outer {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+    label {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 27px;
+      color: $grey;
+      margin-bottom: 14px;
+      display: block;
+    }
+    input {
+      padding: 17px 24px;
+      width: 100%;
+      border: 1px solid $border;
+      box-sizing: border-box;
+      border-radius: 9px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 120%;
+      color: #fff;
+      background: $main-bg;
+      font-family: "Nunito", sans-serif;
+    }
+  }
+}
+.textarea {
+  &__outer {
+    position: relative;
+    margin-bottom: 25px;
+    label {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 27px;
+      color: $grey;
+      margin-bottom: 14px;
+      display: block;
+    }
+    textarea {
+      padding: 17px 24px;
+      width: 100%;
+      border: 1px solid $border;
+      box-sizing: border-box;
+      border-radius: 9px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 120%;
+      color: #fff;
+      background: $main-bg;
+      font-family: "Nunito", sans-serif;
+      resize: none;
+    }
+  }
+}

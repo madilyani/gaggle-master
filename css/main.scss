@@ -14,13 +14,20 @@
 @import "./components/2-layout/friend.scss";
 @import "./components/2-layout/range.scss";
 @import "./components/2-layout/incriment.scss";
+@import "./components/2-layout/customSelect.scss";
+@import "./components/2-layout/modal.scss";
+@import "./components/2-layout/issue.scss";
+@import "./components/2-layout/input.scss";
+@import "./components/2-layout/gallery.scss";
+@import "./components/2-layout/video.scss";
 
-// 3-pages components 
+// 3-pages components
 @import "./components/3-pages/index.scss";
 @import "./components/3-pages/profile.scss";
 @import "./components/3-pages/purchase.scss";
+@import "./components/3-pages/toolbar.scss";
 
-// responsive 
+// responsive
 @import "./components/2-layout/responsive.scss";
 @import "./components/2-layout/slick-theme.scss";
 @import "./components/2-layout/slick.scss";

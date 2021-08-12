@@ -1,0 +1,176 @@
+.toolbar {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 20px;
+  &__inner {
+    &-header {
+      padding: 32px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &-side {
+        width: calc(100% - 528px);
+        padding-right: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &-row {
+          display: flex;
+          align-items: center;
+        }
+        &-back {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid $border;
+          box-sizing: border-box;
+          border-radius: 4px;
+          width: 48px;
+          height: 40px;
+          @include transition-border;
+          margin-right: 24px;
+          svg {
+            width: 10px;
+            height: 18px;
+            fill: $grey;
+            @include transition-fill;
+          }
+          &:hover {
+            border: 1px solid $blue;
+            svg {
+              fill: $blue;
+            }
+          }
+        }
+        &-info {
+          width: calc(100% - 72px);
+          &-title {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 26px;
+            letter-spacing: 0.2px;
+            color: $white-black;
+          }
+          &-row {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+          }
+          &-column {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            &-icon {
+              width: 26px;
+              height: 26px;
+              border: 1px solid #403c4e;
+              box-sizing: border-box;
+              border-radius: 4px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-right: 8px;
+              svg {
+                width: 14px;
+                height: 14px;
+                fill: $yellow;
+              }
+            }
+            span {
+              font-style: normal;
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 19px;
+              color: $grey;
+            }
+          }
+        }
+        &-question {
+          background: $main-bg;
+          border: 1px solid $border;
+          box-sizing: border-box;
+          border-radius: 38px;
+          width: 58px;
+          height: 58px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          @include transition-bg;
+          &:hover {
+            background: rgba($color: $blue, $alpha: 0.2);
+            svg {
+              fill: $blue;
+            }
+          }
+          svg {
+            fill: $grey;
+            pointer-events: none;
+            @include transition-fill;
+          }
+        }
+      }
+      &-btns {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 480px;
+        padding-left: 20px;
+        position: relative;
+        &::before {
+          position: absolute;
+          content: "";
+          top: 50%;
+          left: 0;
+          @include transformY;
+          width: 1px;
+          height: 70%;
+          background: $border;
+        }
+        button {
+          width: calc(50% - 16px);
+          margin: 0 8px;
+          padding: 15px 30px;
+          display: flex;
+          align-items: center;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 27px;
+          color: $blue;
+          background: rgba($color: $blue, $alpha: 0.15);
+          border: 1px solid $blue;
+          box-sizing: border-box;
+          border-radius: 38px;
+          cursor: pointer;
+          @include transition-shadow;
+          svg {
+            margin-right: 10px;
+            fill: $blue;
+          }
+          &:last-child {
+            color: #fff;
+            background: $blue;
+            svg {
+              margin-left: 10px;
+              margin-right: 0;
+              fill: #fff;
+            }
+          }
+          &:hover {
+            box-shadow: 0px 7px 21px -1px rgba($color: $blue, $alpha: 0.4);
+          }
+        }
+      }
+    }
+    &-body {
+      &-image {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
