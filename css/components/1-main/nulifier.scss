@@ -23,9 +23,6 @@ button {
 button:focus {
   outline: none;
 }
-button:focus {
-  outline: none;
-}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -38,7 +35,7 @@ input::-webkit-inner-spin-button {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #fff;
+  background: $main-bg;
 }
 
 /* Handle */
@@ -61,11 +58,12 @@ body {
   font-family: "Nunito", sans-serif;
   font-size: 14px;
   color: #000;
-  line-height: 1.7em;
+  line-height: 1.2;
   font-weight: 400;
   background: $primary-bg;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
+  overflow-y: scroll;
 }
 body.active {
   overflow: hidden;
@@ -85,7 +83,7 @@ h6 {
   font-weight: normal;
   margin: 0px;
   background: none;
-  line-height: 1.6em;
+  line-height: 1.2;
 }
 /* Typography */
 h1 {
@@ -108,7 +106,7 @@ h6 {
 }
 p {
   position: relative;
-  line-height: 1.8em;
+  line-height: 1.4;
 }
 .auto__container {
   position: relative;

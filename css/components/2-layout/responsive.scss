@@ -289,6 +289,47 @@
     }
   }
   // purchase page end
+  // toolbar page start
+  .toolbar {
+    &__inner {
+      &-header {
+        &-side {
+          padding-right: 20px;
+          width: calc(100% - 420px);
+          &-question {
+            width: 40px;
+            height: 40px;
+            svg {
+              width: 18px;
+              height: 18px;
+            }
+          }
+        }
+        &-btns {
+          width: 380px;
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 15px;
+            font-size: 16px;
+            line-height: 1.2;
+            &:last-child {
+              svg {
+                width: 6px;
+                height: 12px;
+              }
+            }
+            svg {
+              width: 18px;
+              height: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+  // toolbar page end
 }
 @include xlg-xxlg {
   .header {
@@ -569,6 +610,75 @@
     margin: 6px 5px;
   }
   // purchase page end
+  // toolbar page start
+  .toolbar {
+    padding: 0;
+    &__inner {
+      &-header {
+        flex-direction: column;
+        -ms-flex-direction: column;
+        padding: 20px;
+        background: $main-bg;
+        &-side {
+          padding-right: 0;
+          width: 100%;
+          align-items: unset;
+          &-row {
+            align-items: unset;
+          }
+          &-info {
+            &-title {
+              max-width: 300px;
+            }
+          }
+        }
+        &-btns {
+          background: $main-bg;
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: calc(100% - 40px);
+          padding: 0;
+          padding: 20px;
+          &::before {
+            display: none;
+          }
+          button {
+            padding: 15px;
+            font-size: 20px;
+            line-height: 27px;
+            &:last-child {
+              svg {
+                width: 15px;
+                height: 24px;
+              }
+            }
+            svg {
+              width: 25px;
+              height: 25px;
+            }
+          }
+        }
+      }
+      &-body {
+        position: fixed;
+        overflow-y: auto;
+        top: 148px;
+        left: 20px;
+        width: calc(100% - 40px);
+        height: calc(100% - 148px - 120px);
+        &-image {
+          height: 100%;
+          border-radius: 15px;
+          overflow: hidden;
+          img {
+            @include fullImage;
+          }
+        }
+      }
+    }
+  }
+  // toolbar page end
 }
 @include lg-xlg {
   .grid {
@@ -892,6 +1002,276 @@
     margin: 6px 0;
   }
   // purchase page end
+  // toolbar page start
+  .toolbar {
+    &__inner {
+      &-header {
+        padding: 14px 16px;
+        &-side {
+          &-info {
+            width: calc(100% - 44px);
+          }
+          &-back {
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+            svg {
+              width: 7px;
+              height: 13px;
+            }
+          }
+          &-info {
+            &-title {
+              max-width: 200px;
+              font-size: 15px;
+              line-height: 22px;
+              max-height: 44px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+        &-btns {
+          border: none;
+          padding: 16px 10px;
+          width: calc(100% - 20px);
+          button {
+            font-size: 14px;
+            line-height: 1;
+            padding: 12px 14px;
+            svg {
+              width: 18px;
+              height: 18px;
+            }
+            &:last-child {
+              svg {
+                width: 7px;
+                height: 13px;
+              }
+            }
+          }
+        }
+      }
+      &-body {
+        top: 128px;
+        height: calc(100% - 128px - 100px);
+      }
+    }
+  }
+  .modal {
+    left: 0;
+    top: unset;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: unset;
+    &__inner {
+      @include transformReset;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 40px);
+      position: fixed;
+      border-radius: unset;
+      top: 40px;
+      &-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 32px 0 12px 0;
+        background: none;
+        border-bottom: 1px solid $border;
+        &::before {
+          position: absolute;
+          content: "";
+          top: 16px;
+          left: 50%;
+          @include transformX;
+          background: $main-bg;
+          height: 4px;
+          width: 50px;
+          border-radius: 5px;
+        }
+        &-title {
+          font-size: 16px;
+          line-height: 1;
+          margin-bottom: 8px;
+        }
+        &-para {
+          font-size: 14px;
+          line-height: 1;
+        }
+      }
+      &-body {
+        position: absolute;
+        top: 83px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 83px - 65px);
+        padding: 0;
+        overflow-y: auto;
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        & {
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
+        }
+      }
+    }
+  }
+  .issue {
+    padding: 20px;
+    &__form {
+      padding: 16px 0;
+      &-row {
+        margin: 0;
+        flex-direction: column;
+        -ms-flex-direction: column;
+      }
+      &-column {
+        width: 100%;
+        margin: 0;
+      }
+    }
+    &__info {
+      padding-bottom: 20px;
+      &-content {
+        &-title {
+          font-size: 16px;
+          line-height: 1;
+        }
+        &-para {
+          font-size: 12px;
+          line-height: 1.2;
+        }
+      }
+    }
+    &__footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: calc(100% - 40px);
+      background: $main-bg;
+      padding: 20px;
+      button {
+        padding: 10px 18px;
+        font-size: 16px;
+        line-height: 1;
+        margin: 0;
+        &:last-child {
+          svg {
+            width: 6px;
+            height: 12px;
+          }
+        }
+      }
+    }
+  }
+  .select__outer {
+    margin-bottom: 10px;
+    label {
+      font-size: 16px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+  }
+  .input__outer {
+    margin-bottom: 10px;
+    label {
+      font-size: 16px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    input {
+      padding: 12px 12px;
+      font-size: 14px;
+      line-height: 1;
+      border-radius: 5px;
+    }
+  }
+  .textarea__outer {
+    margin-bottom: 10px;
+    label {
+      font-size: 16px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    textarea {
+      padding: 12px 12px;
+      font-size: 14px;
+      line-height: 1;
+      border-radius: 5px;
+    }
+  }
+  .select-selected {
+    padding: 14px 12px;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 5px;
+    &::after {
+      width: 6px;
+      height: 6px;
+      right: 12px;
+    }
+  }
+  .select-items div {
+    padding: 14px 12px;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 5px;
+  }
+  .gallery {
+    margin: -7px;
+    padding: 16px;
+    &__column {
+      margin: 14px 7px;
+    }
+    &__footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: calc(100% - 40px);
+      background: $main-bg;
+      padding: 20px;
+    }
+    .slick-list {
+      padding: 0 20% 0 0 !important;
+    }
+  }
+  .card {
+    &__modal {
+      &-image {
+        height: 160px;
+      }
+      &-body {
+        &-title {
+          &-text {
+            font-size: 14px;
+            line-height: 18px;
+            max-height: 36px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+        &-para {
+          font-size: 10px;
+          line-height: 12px;
+          max-height: 24px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 175px;
+        }
+      }
+    }
+  }
+  .video {
+    padding: 27px;
+  }
+  // toolbar page end
 }
 @include extra {
   .achivement {

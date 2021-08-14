@@ -69,6 +69,7 @@ $(".gallery").slick({
     {
       breakpoint: 480,
       settings: {
+        infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
       },

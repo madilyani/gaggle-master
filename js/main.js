@@ -40,18 +40,16 @@ function onTabClick(tabBtns, tabItems, item) {
     }
   });
 }
-const $$card = document.querySelector('.cardRe')
-const removeBtns = document.querySelectorAll('.remove');
+const $$card = document.querySelector(".cardRe");
+const removeBtns = document.querySelectorAll(".remove");
 removeBtns.forEach((btn) => {
   onRemove(btn);
 });
-function onRemove(btn ) {
+function onRemove(btn) {
   btn.addEventListener("click", function (e) {
-    e.target.parentNode.classList.add('removed')
-    e.target.parentNode.addEventListener('animationend', (el) => {
-      el.target.classList.add('hide')
-    })
+    e.target.parentNode.classList.add("removed");
+    e.target.parentNode.addEventListener("animationend", (el) => {
+      el.target.classList.add("hide");
+    });
   });
-  
 }
-  

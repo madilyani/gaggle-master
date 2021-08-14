@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+    <title>Game History</title>
+</head>
+
+<body>
+
+
+
+    <!-- sidebar start
+    =========================================== -->
+    <div class="sidebar">
+        <div class="sidebar__inner">
+            <a href="#" class="sidebar__inner-logo">
+                <img src="images/logoDark.png" alt="">
+            </a>
+            <nav class="nav" id="menu">
+                <div class="nav__inner">
+                    <div class="nav__inner-links">
+                        <a href="index.html" class="nav__inner-link ">
+                            <svg width="32" height="23" viewBox="0 0 32 23" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22.7701 0.0951538C25.0244 0.0951538 27.1864 0.990687 28.7805 2.58475C30.3745 4.17881 31.2701 6.34081 31.2701 8.59515V14.2618C31.2701 16.5162 30.3745 18.6782 28.7805 20.2722C27.1864 21.8663 25.0244 22.7618 22.7701 22.7618H8.60339C6.34905 22.7618 4.18704 21.8663 2.59299 20.2722C0.998927 18.6782 0.103394 16.5162 0.103394 14.2618V8.59515C0.103394 6.34081 0.998927 4.17881 2.59299 2.58475C4.18704 0.990687 6.34905 0.0951538 8.60339 0.0951538H22.7701ZM22.7701 2.92849H8.60339C7.14955 2.92849 5.75132 3.48727 4.69791 4.48926C3.6445 5.49125 3.0165 6.8598 2.94381 8.31182L2.93673 8.59515V14.2618C2.93673 15.7157 3.49551 17.1139 4.4975 18.1673C5.49949 19.2207 6.86803 19.8487 8.32006 19.9214L8.60339 19.9285H22.7701C24.2239 19.9285 25.6221 19.3697 26.6755 18.3677C27.729 17.3657 28.3569 15.9972 28.4296 14.5452L28.4367 14.2618V8.59515C28.4367 7.14131 27.8779 5.74308 26.8759 4.68967C25.874 3.63626 24.5054 3.00826 23.0534 2.93557L22.7701 2.92849ZM12.8534 7.17849V10.0118H15.6867V12.8452H12.852L12.8534 15.6785H10.0201L10.0186 12.8452H7.18673V10.0118H10.0201V7.17849H12.8534ZM24.1867 12.8452V15.6785H21.3534V12.8452H24.1867ZM21.3534 7.17849V10.0118H18.5201V7.17849H21.3534Z"
+                                    fill="" />
+                            </svg>
+                        </a>
+                        <a href="profile.html" class="nav__inner-link">
+                            <svg width="19" height="24" viewBox="0 0 19 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.6868 23.75H16.4368V21.5C16.4368 20.6049 16.0812 19.7465 15.4483 19.1135C14.8153 18.4806 13.9569 18.125 13.0618 18.125H6.31177C5.41666 18.125 4.55822 18.4806 3.92528 19.1135C3.29235 19.7465 2.93677 20.6049 2.93677 21.5V23.75H0.686768V21.5C0.686768 20.0082 1.2794 18.5774 2.33429 17.5225C3.38918 16.4676 4.81992 15.875 6.31177 15.875H13.0618C14.5536 15.875 15.9843 16.4676 17.0392 17.5225C18.0941 18.5774 18.6868 20.0082 18.6868 21.5V23.75ZM9.68677 13.625C8.80034 13.625 7.9226 13.4504 7.10365 13.1112C6.28471 12.772 5.54059 12.2748 4.9138 11.648C4.287 11.0212 3.7898 10.2771 3.45058 9.45812C3.11136 8.63917 2.93677 7.76142 2.93677 6.875C2.93677 5.98858 3.11136 5.11084 3.45058 4.29189C3.7898 3.47294 4.287 2.72883 4.9138 2.10203C5.54059 1.47523 6.28471 0.978033 7.10365 0.638813C7.9226 0.299594 8.80034 0.125 9.68677 0.125C11.477 0.125 13.1939 0.836159 14.4597 2.10203C15.7256 3.3679 16.4368 5.08479 16.4368 6.875C16.4368 8.66521 15.7256 10.3821 14.4597 11.648C13.1939 12.9138 11.477 13.625 9.68677 13.625ZM9.68677 11.375C10.8802 11.375 12.0248 10.9009 12.8687 10.057C13.7127 9.21307 14.1868 8.06848 14.1868 6.875C14.1868 5.68153 13.7127 4.53693 12.8687 3.69302C12.0248 2.84911 10.8802 2.375 9.68677 2.375C8.49329 2.375 7.3487 2.84911 6.50479 3.69302C5.66087 4.53693 5.18677 5.68153 5.18677 6.875C5.18677 8.06848 5.66087 9.21307 6.50479 10.057C7.3487 10.9009 8.49329 11.375 9.68677 11.375Z"
+                                    fill="" />
+                            </svg>
+                        </a>
+                        <a href="#" class="nav__inner-link active">
+                            <svg width="23" height="24" viewBox="0 0 23 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11.6868 0.822021C17.9001 0.822021 22.9368 5.85865 22.9368 12.072C22.9368 18.2854 17.9001 23.322 11.6868 23.322C5.47339 23.322 0.436768 18.2854 0.436768 12.072H2.68677C2.68677 17.0423 6.71652 21.072 11.6868 21.072C16.657 21.072 20.6868 17.0423 20.6868 12.072C20.6868 7.10177 16.657 3.07202 11.6868 3.07202C8.91477 3.07202 6.43527 4.32527 4.78489 6.29515L7.18677 8.69702H0.436768V1.94702L3.18964 4.69877C5.25177 2.32502 8.29377 0.822021 11.6868 0.822021ZM12.8118 6.44702V11.6051L16.4601 15.2535L14.8683 16.8454L10.5618 12.5366V6.44702H12.8118Z"
+                                    fill="" />
+                            </svg>
+                        </a>
+                    </div>
+                    <a href="#" class="nav__inner-link setting">
+                        <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.4368 0.125L22.1243 6.3125V18.6875L11.4368 24.875L0.749268 18.6875V6.3125L11.4368 0.125ZM11.4368 2.72487L2.99927 7.60962V17.3904L11.4368 22.2751L19.8743 17.3904V7.60962L11.4368 2.72487ZM11.4368 17C10.2433 17 9.0987 16.5259 8.25479 15.682C7.41087 14.8381 6.93677 13.6935 6.93677 12.5C6.93677 11.3065 7.41087 10.1619 8.25479 9.31802C9.0987 8.4741 10.2433 8 11.4368 8C12.6302 8 13.7748 8.4741 14.6187 9.31802C15.4627 10.1619 15.9368 11.3065 15.9368 12.5C15.9368 13.6935 15.4627 14.8381 14.6187 15.682C13.7748 16.5259 12.6302 17 11.4368 17ZM11.4368 14.75C12.0335 14.75 12.6058 14.5129 13.0278 14.091C13.4497 13.669 13.6868 13.0967 13.6868 12.5C13.6868 11.9033 13.4497 11.331 13.0278 10.909C12.6058 10.4871 12.0335 10.25 11.4368 10.25C10.84 10.25 10.2677 10.4871 9.84578 10.909C9.42382 11.331 9.18677 11.9033 9.18677 12.5C9.18677 13.0967 9.42382 13.669 9.84578 14.091C10.2677 14.5129 10.84 14.75 11.4368 14.75Z"
+                                fill="" />
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+            <div class="sidebar__inner-mobile">
+                <div class="sidebar__inner-mobile-search" id="searchBtn">
+                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M15.7559 14.1307L12.9226 11.3057C13.8367 10.141 14.3327 8.70288 14.3309 7.22233C14.3309 5.90379 13.9399 4.61486 13.2074 3.51853C12.4748 2.4222 11.4336 1.56772 10.2155 1.06314C8.99728 0.558553 7.65683 0.42653 6.36363 0.683765C5.07042 0.941 3.88253 1.57594 2.95018 2.50829C2.01783 3.44064 1.38289 4.62853 1.12566 5.92173C0.868425 7.21494 1.00045 8.55538 1.50503 9.77356C2.00962 10.9917 2.8641 12.0329 3.96043 12.7655C5.05675 13.498 6.34569 13.889 7.66423 13.889C9.14477 13.8908 10.5829 13.3948 11.7476 12.4807L14.5726 15.314C14.65 15.3921 14.7422 15.4541 14.8437 15.4964C14.9453 15.5387 15.0542 15.5605 15.1642 15.5605C15.2742 15.5605 15.3832 15.5387 15.4847 15.4964C15.5863 15.4541 15.6784 15.3921 15.7559 15.314C15.834 15.2365 15.896 15.1444 15.9383 15.0428C15.9806 14.9413 16.0024 14.8323 16.0024 14.7223C16.0024 14.6123 15.9806 14.5034 15.9383 14.4019C15.896 14.3003 15.834 14.2081 15.7559 14.1307ZM2.66423 7.22233C2.66423 6.23343 2.95747 5.26673 3.50688 4.44448C4.05629 3.62224 4.83718 2.98137 5.75081 2.60294C6.66444 2.2245 7.66977 2.12548 8.63968 2.31841C9.60958 2.51133 10.5005 2.98754 11.1998 3.6868C11.899 4.38606 12.3752 5.27698 12.5682 6.24688C12.7611 7.21679 12.6621 8.22212 12.2836 9.13575C11.9052 10.0494 11.2643 10.8303 10.4421 11.3797C9.61983 11.9291 8.65313 12.2223 7.66423 12.2223C6.33815 12.2223 5.06638 11.6955 4.12869 10.7579C3.19101 9.82019 2.66423 8.54842 2.66423 7.22233Z"
+                            fill="" />
+                    </svg>
+                </div>
+                <div class="burger" id="menuBtn"></div>
+            </div>
+        </div>
+    </div>
+    <!-- sidebar end
+    =========================================== -->
+    <!-- section start
+    =========================================== -->
+    <section class="section">
+        <div class="auto__container">
+            <div class="section__inner">
+                <!-- header start
+                =========================================== -->
+                <header class="header">
+                    <div class="header__inner">
+                        <div class="header__inner-title">
+                            Game history
+                        </div>
+                        <div class="header__inner-row">
+                            <form action="#" class="search" id="search">
+                                <button type="submit">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15.2583 14.075L12.425 11.25C13.3392 10.0854 13.8352 8.64722 13.8333 7.16667C13.8333 5.84813 13.4423 4.5592 12.7098 3.46287C11.9773 2.36654 10.9361 1.51206 9.71789 1.00747C8.49972 0.502889 7.15927 0.370866 5.86607 0.628101C4.57286 0.885336 3.38497 1.52027 2.45262 2.45262C1.52027 3.38497 0.885336 4.57286 0.628101 5.86607C0.370866 7.15927 0.502889 8.49972 1.00747 9.71789C1.51206 10.9361 2.36654 11.9773 3.46287 12.7098C4.5592 13.4423 5.84813 13.8333 7.16667 13.8333C8.64722 13.8352 10.0854 13.3392 11.25 12.425L14.075 15.2583C14.1525 15.3364 14.2446 15.3984 14.3462 15.4407C14.4477 15.4831 14.5567 15.5048 14.6667 15.5048C14.7767 15.5048 14.8856 15.4831 14.9872 15.4407C15.0887 15.3984 15.1809 15.3364 15.2583 15.2583C15.3364 15.1809 15.3984 15.0887 15.4407 14.9872C15.4831 14.8856 15.5048 14.7767 15.5048 14.6667C15.5048 14.5567 15.4831 14.4477 15.4407 14.3462C15.3984 14.2446 15.3364 14.1525 15.2583 14.075ZM2.16667 7.16667C2.16667 6.17776 2.45991 5.21106 3.00932 4.38882C3.55873 3.56657 4.33962 2.92571 5.25325 2.54727C6.16688 2.16883 7.17222 2.06982 8.14212 2.26274C9.11203 2.45567 10.0029 2.93187 10.7022 3.63114C11.4015 4.3304 11.8777 5.22131 12.0706 6.19122C12.2635 7.16112 12.1645 8.16646 11.7861 9.08009C11.4076 9.99372 10.7668 10.7746 9.94452 11.324C9.12228 11.8734 8.15558 12.1667 7.16667 12.1667C5.84059 12.1667 4.56882 11.6399 3.63114 10.7022C2.69345 9.76452 2.16667 8.49275 2.16667 7.16667Z"
+                                            fill="#8A879B" />
+                                    </svg>
+                                </button>
+                                <input type="text" placeholder="Search games...">
+                            </form>
+                            <div class="header__inner-row-info">
+                                <div class="header__inner-row-info-avatar">
+                                    <img src="images/avatar.png" alt="">
+                                </div>
+                                <div class="header__inner-row-info-name">
+                                    Elayamani
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- header end
+                =========================================== -->
+                <!-- history start
+                =========================================== -->
+                <seciton class="history">
+                    <div class="auto__container">
+                        <div class="history__inner">
+                            <div class="history__inner-header">
+                                <div class="history__inner-row">
+                                    <div class="history__inner-column">
+                                        TITLE
+                                    </div>
+                                    <div class="history__inner-column">
+                                        PLAYED AT
+                                    </div>
+                                    <div class="history__inner-column">
+                                        PLAYED AT
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="history__tab">
+                                <div class="history__tab-header">
+                                    <div class="history__inner-row">
+                                        <div class="history__tab-column">
+                                            <div class="history__tab-column-info">
+                                                <div class="history__tab-column-info-image">
+                                                    <img src="images/games/1 (1).png" alt="">
+                                                </div>
+                                                <div class="history__tab-column-info-content">
+                                                    <div class="history__tab-column-info-content-title">
+                                                        Mayan curse - If title is big
+                                                    </div>
+                                                    <div class="history__tab-column-info-content-para">
+                                                        Two line game description can come here, if it has two lines
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="history__tab-column">
+                                            <div class="history__tab-column-time">
+                                                June 12 th 2021
+                                            </div>
+                                        </div>
+                                        <div class="history__tab-column">
+                                            <div class="history__tab-column-time">
+                                                10:50 PM
+                                            </div>
+                                        </div>
+                                        <div class="history__tab-column">
+                                            <div class="history__tab-column-btn historyBtn" data-tab="#history-1">
+                                                View details
+                                                <svg width="17" height="10" viewBox="0 0 17 10" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M0.787451 1.16435C0.379118 1.57268 0.379118 2.23102 0.787451 2.63935L7.71245 9.56436C8.03745 9.88936 8.56245 9.88936 8.88745 9.56436L15.8125 2.63935C16.2208 2.23102 16.2208 1.57268 15.8125 1.16435C15.4041 0.756018 14.7458 0.756018 14.3375 1.16435L8.29578 7.19769L2.25412 1.15602C1.85412 0.756019 1.18745 0.756018 0.787451 1.16435Z"
+                                                        fill="" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="history__tab-body historyEvent" id="history-1">
+                                    <div class="history__tab-body-played">
+                                        <div class="history__tab-body-played-group">
+                                            <div class="history__tab-body-played-group-avatar">
+                                                <img src="images/avatar/1.png" alt="">
+                                            </div>
+                                            <div class="history__tab-body-played-group-avatar">
+                                                <img src="images/avatar/2.png" alt="">
+                                            </div>
+                                            <div class="history__tab-body-played-group-avatar">
+                                                <img src="images/avatar/3.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="history__tab-body-played-title">
+                                            Played with Cellum, Herbart, Chris
+                                        </div>
+
+                                    </div>
+                                    <div class="history__tab-body-slider-outer">
+                                        <div class="history__tab-body-slider">
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Reytrieved Magial Goblet
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    56 minutes remaining
+                                                </div>
+                                            </div>
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Combined items
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    56 minutes remaining
+                                                </div>
+                                            </div>
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Solved lock puzzle
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    40 minutes remaining
+                                                </div>
+                                            </div>
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Solved bookshelf puzzle
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    30 minutes remaining
+                                                </div>
+                                            </div>
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Completed game
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    15 minutes remaining
+                                                </div>
+                                            </div>
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Completed game
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    15 minutes remaining
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="history__tab">
+                                <div class="history__tab-header">
+                                    <div class="history__inner-row">
+                                        <div class="history__tab-column">
+                                            <div class="history__tab-column-info">
+                                                <div class="history__tab-column-info-image">
+                                                    <img src="images/games/1 (1).png" alt="">
+                                                </div>
+                                                <div class="history__tab-column-info-content">
+                                                    <div class="history__tab-column-info-content-title">
+                                                        Mayan curse - If title is big
+                                                    </div>
+                                                    <div class="history__tab-column-info-content-para">
+                                                        Two line game description can come here, if it has two lines
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="history__tab-column">
+                                            <div class="history__tab-column-time">
+                                                June 12 th 2021
+                                            </div>
+                                        </div>
+                                        <div class="history__tab-column">
+                                            <div class="history__tab-column-time">
+                                                10:50 PM
+                                            </div>
+                                        </div>
+                                        <div class="history__tab-column">
+                                            <div class="history__tab-column-btn historyBtn" data-tab="#history-2">
+                                                View details
+                                                <svg width="17" height="10" viewBox="0 0 17 10" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M0.787451 1.16435C0.379118 1.57268 0.379118 2.23102 0.787451 2.63935L7.71245 9.56436C8.03745 9.88936 8.56245 9.88936 8.88745 9.56436L15.8125 2.63935C16.2208 2.23102 16.2208 1.57268 15.8125 1.16435C15.4041 0.756018 14.7458 0.756018 14.3375 1.16435L8.29578 7.19769L2.25412 1.15602C1.85412 0.756019 1.18745 0.756018 0.787451 1.16435Z"
+                                                        fill="" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="history__tab-body historyEvent" id="history-2">
+                                    <div class="history__tab-body-played">
+                                        <div class="history__tab-body-played-group">
+                                            <div class="history__tab-body-played-group-avatar">
+                                                <img src="images/avatar/1.png" alt="">
+                                            </div>
+                                            <div class="history__tab-body-played-group-avatar">
+                                                <img src="images/avatar/2.png" alt="">
+                                            </div>
+                                            <div class="history__tab-body-played-group-avatar">
+                                                <img src="images/avatar/3.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="history__tab-body-played-title">
+                                            Played with Cellum, Herbart, Chris
+                                        </div>
+
+                                    </div>
+                                    <div class="history__tab-body-slider-outer">
+                                        <div class="history__tab-body-slider">
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Reytrieved Magial Goblet
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    56 minutes remaining
+                                                </div>
+                                            </div>
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Combined items
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    56 minutes remaining
+                                                </div>
+                                            </div>
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Solved lock puzzle
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    40 minutes remaining
+                                                </div>
+                                            </div>
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Solved bookshelf puzzle
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    30 minutes remaining
+                                                </div>
+                                            </div>
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Completed game
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    15 minutes remaining
+                                                </div>
+                                            </div>
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Completed game
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    15 minutes remaining
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="history__tab">
+                                <div class="history__tab-header">
+                                    <div class="history__inner-row">
+                                        <div class="history__tab-column">
+                                            <div class="history__tab-column-info">
+                                                <div class="history__tab-column-info-image">
+                                                    <img src="images/games/1 (1).png" alt="">
+                                                </div>
+                                                <div class="history__tab-column-info-content">
+                                                    <div class="history__tab-column-info-content-title">
+                                                        Mayan curse - If title is big
+                                                    </div>
+                                                    <div class="history__tab-column-info-content-para">
+                                                        Two line game description can come here, if it has two lines
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="history__tab-column">
+                                            <div class="history__tab-column-time">
+                                                June 12 th 2021
+                                            </div>
+                                        </div>
+                                        <div class="history__tab-column">
+                                            <div class="history__tab-column-time">
+                                                10:50 PM
+                                            </div>
+                                        </div>
+                                        <div class="history__tab-column">
+                                            <div class="history__tab-column-btn historyBtn" data-tab="#history-3">
+                                                View details
+                                                <svg width="17" height="10" viewBox="0 0 17 10" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M0.787451 1.16435C0.379118 1.57268 0.379118 2.23102 0.787451 2.63935L7.71245 9.56436C8.03745 9.88936 8.56245 9.88936 8.88745 9.56436L15.8125 2.63935C16.2208 2.23102 16.2208 1.57268 15.8125 1.16435C15.4041 0.756018 14.7458 0.756018 14.3375 1.16435L8.29578 7.19769L2.25412 1.15602C1.85412 0.756019 1.18745 0.756018 0.787451 1.16435Z"
+                                                        fill="" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="history__tab-body historyEvent" id="history-3">
+                                    <div class="history__tab-body-played">
+                                        <div class="history__tab-body-played-group">
+                                            <div class="history__tab-body-played-group-avatar">
+                                                <img src="images/avatar/1.png" alt="">
+                                            </div>
+                                            <div class="history__tab-body-played-group-avatar">
+                                                <img src="images/avatar/2.png" alt="">
+                                            </div>
+                                            <div class="history__tab-body-played-group-avatar">
+                                                <img src="images/avatar/3.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="history__tab-body-played-title">
+                                            Played with Cellum, Herbart, Chris
+                                        </div>
+
+                                    </div>
+                                    <div class="history__tab-body-slider-outer">
+                                        <div class="history__tab-body-slider">
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Reytrieved Magial Goblet
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    56 minutes remaining
+                                                </div>
+                                            </div>
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Combined items
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    56 minutes remaining
+                                                </div>
+                                            </div>
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Solved lock puzzle
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    40 minutes remaining
+                                                </div>
+                                            </div>
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Solved bookshelf puzzle
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    30 minutes remaining
+                                                </div>
+                                            </div>
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Completed game
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    15 minutes remaining
+                                                </div>
+                                            </div>
+                                            <div class="history__tab-body-slider-item">
+                                                <div class="history__tab-body-slider-item-icon">
+                                                    <svg width="17" height="13" viewBox="0 0 17 13" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M15.1183 1.10345L6.38134 9.84041L2.73407 6.19314C2.33225 5.79132 1.68316 5.79132 1.28134 6.19314C0.879526 6.59496 0.879526 7.24405 1.28134 7.64587L5.64983 12.0144C6.05165 12.4162 6.70074 12.4162 7.10256 12.0144L16.5607 2.55617C16.9626 2.15435 16.9626 1.49496 16.5504 1.09314C16.1692 0.701627 15.5201 0.701627 15.1183 1.10345Z"
+                                                            fill="" />
+                                                    </svg>
+                                                </div>
+                                                <div class="history__tab-body-slider-item-title">
+                                                    Completed game
+                                                </div>
+                                                <div class="history__tab-body-slider-item-para">
+                                                    15 minutes remaining
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </seciton>
+                <!-- history end
+                =========================================== -->
+            </div>
+        </div>
+    </section>
+    <!-- section end
+    =========================================== -->
+    <!-- footer start
+    =========================================== -->
+    <!-- footer end
+    =========================================== -->
+    <script src="js/jquery.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/historySlider.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
